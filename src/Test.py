@@ -34,6 +34,41 @@ class TestClass(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 ###Visuellement ce que fait la classe###
 #####Test class problem####
 try:
