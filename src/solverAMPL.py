@@ -2,6 +2,7 @@ import solver
 import amplpy
 import os
 
+
 #Herite de la classe Solver, polymorphisme de la fonction solve
 class SolverAmpl(solver.Solver):
     def __init__(self):
