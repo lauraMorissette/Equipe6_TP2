@@ -22,7 +22,7 @@ distance_depot = [[2.1],
 	    [0.125],
 	    [2.25]]
 CM_neige = 15
-coutKM =0.15
+coutKM =2
 
 solveurAMPL = solv_ampl.SolverAmpl()
 probleme = prob_park.ParkingProb(distance,distance_depot,surface,CM_neige,coutKM)
