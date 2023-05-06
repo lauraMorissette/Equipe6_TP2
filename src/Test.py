@@ -7,31 +7,28 @@ import solverAMPL as solv_ampl
 import solverMiniZinc as solv_mini
 
 
-a = prob.Problem()
-b = solv.Solver()
-c = prob_park.ParkingProb()
-d = solv_ampl.SolverAmpl()
-e = solv_mini.SolverMiniZinc()
-
-
-###Cette classe Test tout les instances des classes#####
 class TestClass(unittest.TestCase): 
-
+### Test tout les instances des classes#####
     def test_instance_Problem(self):
+        a = prob.Problem()
         self.assertTrue(isinstance(a,prob.Problem))
 
     def test_instance_Solver(self):
+        b = solv.Solver()
         self.assertTrue(isinstance(b,solv.Solver))
 
     def test_instance_problem_parking(self):
+        c = prob_park.ParkingProb()
         self.assertTrue(isinstance(c,prob_park.ParkingProb))
         self.assertTrue(isinstance(c,prob.Problem))
 
     def test_instance_SolverAmpl(self):
+        d = solv_ampl.SolverAmpl()
         self.assertTrue(isinstance(d,solv_ampl.SolverAmpl))
         self.assertTrue(isinstance(d,solv.Solver))
 
     def test_instance_SolverMiniZinc(self):
+        e = solv_mini.SolverMiniZinc()
         self.assertTrue(isinstance(e,solv_mini.SolverMiniZinc))
         self.assertTrue(isinstance(e,solv.Solver))
 
