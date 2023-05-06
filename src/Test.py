@@ -19,17 +19,25 @@ class TestClass(unittest.TestCase):
 
     def test_instance_Problem(self):
         self.assertTrue(isinstance(a,prob.Problem))
+
     def test_instance_Solver(self):
         self.assertTrue(isinstance(b,solv.Solver))
+
     def test_instance_problem_parking(self):
         self.assertTrue(isinstance(c,prob_park.ParkingProb))
         self.assertTrue(isinstance(c,prob.Problem))
+
     def test_instance_SolverAmpl(self):
         self.assertTrue(isinstance(d,solv_ampl.SolverAmpl))
         self.assertTrue(isinstance(d,solv.Solver))
+
     def test_instance_SolverMiniZinc(self):
         self.assertTrue(isinstance(e,solv_mini.SolverMiniZinc))
         self.assertTrue(isinstance(e,solv.Solver))
+
+    
+
+
 
 
 if __name__ == '__main__':

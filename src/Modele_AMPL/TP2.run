@@ -1,0 +1,10 @@
+reset;
+option solver gurobi;
+
+model TP2.mod;
+data TP2.dat;
+solve;
+display Fct_obj;
+display X;
+#display Y;
+display NOMBRE_CAMION;

@@ -1,5 +1,6 @@
 import solver
 import amplpy
+import problem_parking as prob_park
 import os
 
 
@@ -16,5 +17,8 @@ class SolverAmpl(solver.Solver):
         ampl.setOption('gurobi_options', 'timelim 600 outlev 1')
 
         model_dir = os.path.normpath('./src/Modele_AMPL')
-        #ampl.read(os.path.join(model_dir, 'TP2.mod'))
+        ampl.read(os.path.join(model_dir, 'TP2.mod'))
         
+        ##longueur de la matrice de distance
+        #longueur = prob.compter_nbr_parking()
+
