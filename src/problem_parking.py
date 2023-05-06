@@ -21,6 +21,3 @@ class ParkingProb(problem.Problem):
     
     def compter_nbr_distance_depot(self):
         return len(self.matrice_depot)
-
-        return True
-        
