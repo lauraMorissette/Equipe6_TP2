@@ -20,5 +20,59 @@ class SolverAmpl(solver.Solver):
         ampl.read(os.path.join(model_dir, 'TP2.mod'))
         
         ##longueur de la matrice de distance
-        #longueur = prob.compter_nbr_parking()
+        longueur = prob.compter_nbr_parking()
+        print(prob.matrice_distance)
+        try:
+
+            D = list(range(2,longueur+2))
+            A = list(range(2,longueur+2))
+            DEPOT = [1]
+
+            df = amplpy.DataFrame('D')
+            df.set_column('D', D)
+            ampl.setData(df, 'D')
+
+            df = amplpy.DataFrame('A')
+            df.set_column('A', A)
+            ampl.setData(df, 'A')
+
+            df = amplpy.DataFrame('DEPOT')
+            df.set_column('DEPOT', DEPOT)
+            ampl.setData(df, 'DEPOT')
+
+            df = amplpy.DataFrame(('D','A'), 'DISTANCE_PARKING')
+            df.setValues({
+                (depart, arrive): prob.matrice_distance[i][j]
+                for i, depart in enumerate(D)
+                for j, arrive in enumerate(A)
+            })
+            ampl.setData(df)
+
+            df = amplpy.DataFrame(('D','DEPOT'), 'DISTANCE_DEPOT_KM')
+            df.setValues({
+                (depart, arrive): prob.matrice_depot[i][j]
+                for i, depart in enumerate(D)
+                for j, arrive in enumerate(DEPOT)
+            })
+            ampl.setData(df)
+
+            df = amplpy.DataFrame(('D'), 'SURFACE_PARKING')
+            df.setValues({
+                (depart): prob.matrice_surface[i]
+                for i, depart in enumerate(D)
+            })
+            ampl.setData(df)
+
+            ampl.getParameter('LONGUEUR').set(longueur)
+            ampl.getParameter('COUT_PAR_KM').set(prob.cm_neige)
+            ampl.getParameter('NB_CM_NEIGE').set(prob.cout_KM)
+
+            
+            ampl.solve()
+            return ampl
+
+
+        except Exception as e:
+            print(e)
+        
 
