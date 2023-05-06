@@ -5,10 +5,13 @@ import solver as solv
 import problem_parking as prob_park
 import solverAMPL as solv_ampl
 import solverMiniZinc as solv_mini
+import donnees as donne
+import copy 
 
 
 class TestClass(unittest.TestCase): 
 ### Test tout les instances des classes#####
+
     def test_instance_Problem(self):
         a = prob.Problem()
         self.assertTrue(isinstance(a,prob.Problem))

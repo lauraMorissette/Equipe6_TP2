@@ -13,7 +13,7 @@ class Distance():
         
 
     def get_matrice():
-        return self.distance_matrix
+        return Distance.distance_matrix
     
     def get_longueur_matrice():
         pass
