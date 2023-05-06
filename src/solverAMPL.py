@@ -9,6 +9,8 @@ class SolverAmpl(solver.Solver):
     def __init__(self):
         super().__init__()
 
+
+
     def solve(self, prob=None):
         try:
             ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')

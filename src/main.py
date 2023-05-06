@@ -27,4 +27,13 @@ coutKM =2
 solveurAMPL = solv_ampl.SolverAmpl()
 probleme = prob_park.ParkingProb(distance,distance_depot,surface,CM_neige,coutKM)
 print(probleme.matrice_distance)
-solveurAMPL.solve(probleme)
+print('#########################################################################3')
+print(probleme.compter_nbr_surface())
+print(probleme.compter_nbr_parking())
+print(probleme.compter_nbr_distance_depot())
+try:
+    probleme.valider_probleme()
+except Exception as e:
+    print(e)
+a= solveurAMPL.solve(probleme)
+#print(a)

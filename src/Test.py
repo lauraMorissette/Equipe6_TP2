@@ -32,10 +32,6 @@ class TestClass(unittest.TestCase):
         self.assertTrue(isinstance(e,solv_mini.SolverMiniZinc))
         self.assertTrue(isinstance(e,solv.Solver))
 
-    
-
-
-
 
 if __name__ == '__main__':
     unittest.main()
