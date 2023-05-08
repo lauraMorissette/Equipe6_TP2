@@ -2,25 +2,20 @@ import solver as solv
 import problem_parking as prob_park
 import solverAMPL as solv_ampl
 
-distance =  [[0, 1.5, 1, 1.1, 2.3, 1.9, 2.7, 0.4], 
-           [1.5, 0, 0.7, 0.85, 1.9, 1.5, 2.1, 1.6], 
-           [1, 0.7, 0, 0.19, 1.4, 1, 1.7, 1.2], 
-           [1.1, 0.85, 0.19, 0, 1.4, 1.1, 1.8, 1.1], 
-           [2.3, 1.9, 1.4, 1.4, 0, 0.55, 1.3, 2.4], 
-           [1.9, 1.5, 1, 1.1, 0.55, 0, 0.9, 2.1], 
-           [2.7, 2.1, 1.7, 1.8, 1.3, 0.9, 0, 2.4], 
-           [0.4, 1.6, 1.2, 1.1, 2.4, 2.1, 2.4, 0]] 
+with open("./Data/dist1.txt", "r") as f:
+    # Lire le contenu du fichier en tant que chaîne de caractères
+    content = f.read()
+    # Convertir la chaîne de caractères en une liste de listes
+    distance = eval(content)
 
-surface = [3000, 2000, 20000,800,4000,3600,25550,875]
+with open("./Data/surf1.txt", "r") as f:
+    content = f.read()
+    surface = eval(content)
 
-distance_depot = [[2.1],
-	    [1.75],
-	    [1.45],
-        [1.1],
-        [0.7],
-        [1],
-	    [0.125],
-	    [2.25]]
+with open("./Data/dist_dep1.txt", "r") as f:
+    content = f.read()
+    distance_depot = eval(content)
+
 CM_neige = 15
 coutKM =2
 
