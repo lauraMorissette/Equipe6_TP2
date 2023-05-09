@@ -2,6 +2,7 @@ import solver as solv
 import problem_parking as prob_park
 import solverAMPL as solv_ampl
 
+## TODO faire le match up avec la classe distance
 with open("./Data/dist1.txt", "r") as f:
     # Lire le contenu du fichier en tant que chaîne de caractères
     content = f.read()
