@@ -1,22 +1,18 @@
 """Usage: python __file__ [OPTIONS]
 Un exemple minimal d'application en ligne de commande.
+Par exemple, pour spécifier 15 cm de neige tombée : 
+>>> python.exe -n 15
 
 Pour rouler l'application en mode interactif, lancez la sans paramètres:
 python __file__
 
 Paramètres obligatoires:
-  -c, --config=<F>          Fichier de configuration des solveurs
+  -n, --neige=<N>           Quantité de neige tombée en cm
 
 Paramètres optionnels:
   -h, --help                Affiche cette documentation.
-  -t, --time=<T>            Temps de résolution maximal en secondes, inscrire 0
-                            pour résoudre le problème sans limite de temps,
-                            la valeur par défaut est de 10 secondes
-  -v, --coutKM=<V>         Niveau de coutKM, la valeur par défaut est 1
-                            0: Aucune sortie
-                            1: Sortie minimale
-                            2: Sortie détaillée
-                            3: Niveau débogage
+  -c, --coutKM=<c>          Coût d'un camion en $/km. La valeur par défau
+                            est de 2$/km
 """
 import getopt
 import sys
@@ -30,6 +26,7 @@ class Usage(Exception):
       self.msg = msg
 
 def main(argv=None):
+    
     if argv is None:
         argv = sys.argv
 
@@ -43,7 +40,22 @@ def main(argv=None):
         
             params['CM_neige'] = None
 
-            params['CoutKM'] = 2
+            params['coutKM'] = 2
+
+            with open("./Data/dist1.txt", "r") as f:
+                # Lire le contenu du fichier en tant que chaîne de caractères
+                content = f.read()
+                # Convertir la chaîne de caractères en une liste de listes
+                params['distance'] = eval(content)
+
+            with open("./Data/surf1.txt", "r") as f:
+                content = f.read()
+                params['surface'] = eval(content)
+
+            with open("./Data/dist_dep1.txt", "r") as f:
+                content = f.read()
+                params['distance_depot'] = eval(content)
+
             opts, args = getopt.getopt(argv[1:],
                                     'hn:c:',
                                     ['help',
@@ -85,29 +97,12 @@ def main(argv=None):
 
             # :TODO: Vérifier les paramètres obligatoires ici
             if params['CM_neige'] is None:
-                raise Usage('La qauantitée de neige tombée est obligatoire')
+                raise Usage('La qantitée de neige tombée est obligatoire')
 
             # :TODO: Ajouter du code pour lancer les modules de traitement ici
-            
-            with open("./Data/dist1.txt", "r") as f:
-                # Lire le contenu du fichier en tant que chaîne de caractères
-                content = f.read()
-                # Convertir la chaîne de caractères en une liste de listes
-                distance = eval(content)
-
-            with open("./Data/surf1.txt", "r") as f:
-                content = f.read()
-                surface = eval(content)
-
-            with open("./Data/dist_dep1.txt", "r") as f:
-                content = f.read()
-                distance_depot = eval(content)
-
-            CM_neige = 15
-            coutKM =2
 
             solveurAMPL = solv_ampl.SolverAmpl()
-            probleme = prob_park.ParkingProb(distance,distance_depot,surface,CM_neige,coutKM)
+            probleme = prob_park.ParkingProb(params['distance'], params['distance_depot'], params['surface'],params['CM_neige'],params['coutKM'])
             print(probleme.matrice_distance)
 
             print(probleme.compter_nbr_surface())
