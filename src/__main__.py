@@ -1,4 +1,5 @@
 """Usage: python __file__ [OPTIONS]
+Programme terrifiant
 Un exemple minimal d'application en ligne de commande.
 Par exemple, pour spécifier 15 cm de neige tombée : 
 >>> python.exe -n 15
@@ -10,7 +11,8 @@ Paramètres obligatoires:
   -n, --neige=<N>           Quantité de neige tombée en cm
 
 Paramètres optionnels:
-  -h, --help                Affiche cette documentation.
+  -h, --help                Affiche cette documentation
+  -f, --ffff                Signifier que vous êtes terrifié
   -c, --coutKM=<c>          Coût d'un camion en $/km. La valeur par défau
                             est de 2$/km
 """
@@ -71,6 +73,9 @@ def main(argv=None):
                 if o in ("-h", "--help"):
                     print(__doc__)
                     sys.exit(0)
+
+                elif o in ('-f', '--ffff'):
+                    print("Moi Aussi.")   
                 
                 #TODO : Rajouter une partie pour matrice de distances
 
