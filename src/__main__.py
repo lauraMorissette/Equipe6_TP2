@@ -1,4 +1,5 @@
 """Usage: python __file__ [OPTIONS]
+Programme terrifiant
 Un exemple minimal d'application en ligne de commande.
 Par exemple, pour spécifier 15 cm de neige tombée : 
 >>> python.exe -n 15
@@ -10,17 +11,18 @@ Paramètres obligatoires:
   -n, --neige=<N>           Quantité de neige tombée en cm
 
 Paramètres optionnels:
-  -h, --help                Affiche cette documentation.
+  -h, --help                Affiche cette documentation
+  -f, --ffff                Signifier que vous êtes terrifié
   -c, --coutKM=<c>          Coût d'un camion en $/km. La valeur par défau
                             est de 2$/km
 """
+
 import getopt
 import sys
 import os
 import solver as solv
 import problem_parking as prob_park
 import solverAMPL as solv_ampl
-
 class Usage(Exception):
    def __init__(self, msg):
       self.msg = msg
@@ -57,8 +59,8 @@ def main(argv=None):
                 params['distance_depot'] = eval(content)
 
             opts, args = getopt.getopt(argv[1:],
-                                    'hn:c:',
-                                    ['help',
+                                    'hfn:c:',
+                                    ['help','ffff'
                                         'neige=',
                                         'coutkm='])
 
@@ -70,6 +72,9 @@ def main(argv=None):
                 if o in ("-h", "--help"):
                     print(__doc__)
                     sys.exit(0)
+
+                elif o in ('-f', '--ffff'):
+                    print("Moi Aussi... Mais")   
                 
                 #TODO : Rajouter une partie pour matrice de distances
 
@@ -108,6 +113,9 @@ def main(argv=None):
             print(probleme.compter_nbr_surface())
             print(probleme.compter_nbr_parking())
             print(probleme.compter_nbr_distance_depot())
+
+            a = solveurAMPL.solve(probleme)
+            print(f"Voici la matrice des destinations:\n{a['X']} \nVoici la distance totale parcourue : {a['Distance totale']} km" )
 
             return 0
 

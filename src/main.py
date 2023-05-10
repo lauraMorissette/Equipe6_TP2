@@ -31,5 +31,5 @@ try:
     probleme.valider_probleme()
 except Exception as e:
     print(e)
-#a= solveurAMPL.solve(probleme)
-#print(a)
+a = solveurAMPL.solve(probleme)
+print(f"Voici la matrice des destinations:\n{a['X']} \nVoici la distance totale parcourue : {a['Distance totale']} km" )
