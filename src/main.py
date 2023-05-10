@@ -3,17 +3,17 @@ import problem_parking as prob_park
 import solverAMPL as solv_ampl
 
 ## TODO faire le match up avec la classe distance
-with open("./Data/dist1.txt", "r") as f:
+with open("./src/data/dist1.txt", "r") as f:
     # Lire le contenu du fichier en tant que chaîne de caractères
     content = f.read()
     # Convertir la chaîne de caractères en une liste de listes
     distance = eval(content)
 
-with open("./Data/surf1.txt", "r") as f:
+with open("./src/data/surf1.txt", "r") as f:
     content = f.read()
     surface = eval(content)
 
-with open("./Data/dist_dep1.txt", "r") as f:
+with open("./src/data/dist_dep1.txt", "r") as f:
     content = f.read()
     distance_depot = eval(content)
 
@@ -31,5 +31,8 @@ try:
     probleme.valider_probleme()
 except Exception as e:
     print(e)
+
 a = solveurAMPL.solve(probleme)
-print(f"Voici la matrice des destinations:\n{a['X']} \nVoici la distance totale parcourue : {a['Distance totale']} km" )
+
+if a != None:
+    print(f"Voici la matrice des destinations:\n{a[0]} \nVoici la distance totale parcourue : {a[1]} km" )

@@ -26,7 +26,7 @@ class ParkingProb(problem.Problem):
         longueur2 = len(m2)
         longueur3 = len(m3)
         if longueur1 == longueur2 == longueur3: 
-            print('ok')
+            pass
         else :
             raise Exception('Les matrices donnée en entrée ne sont pas compatible')
 

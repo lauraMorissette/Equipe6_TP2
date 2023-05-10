@@ -39,8 +39,6 @@ a= solveurAMPL.solve(probleme)
 print(a[0])
 print(a[1])
 
-        
-
 
 distance =  [[0, 1.5, 1, 1.1, 2.3, 1.9, 2.7, 0.4], 
            [1.5, 0, 0.7, 0.85, 1.9, 1.5, 2.1, 1.6], 

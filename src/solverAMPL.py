@@ -94,6 +94,7 @@ class SolverAmpl(solver.Solver):
             return (X, total_distance)
 
         except Exception as e:
+            print('exception')
             print(e)
         
 
