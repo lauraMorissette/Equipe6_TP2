@@ -110,6 +110,9 @@ def main(argv=None):
             print(probleme.compter_nbr_parking())
             print(probleme.compter_nbr_distance_depot())
 
+            a = solveurAMPL.solve(probleme)
+            print(f"Voici la matrice des destinations:\n{a['X']} \nVoici la distance totale parcourue : {a['Distance totale']} km" )
+
             return 0
 
         except getopt.error as msg:

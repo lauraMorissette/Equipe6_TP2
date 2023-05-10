@@ -32,4 +32,4 @@ try:
 except Exception as e:
     print(e)
 a = solveurAMPL.solve(probleme)
-print(f"Voici la matrice des destinations {a['X']}\n Voici la distance totale parcourue : {a['Distance totale']} km" )
+print(f"Voici la matrice des destinations:\n{a['X']} \nVoici la distance totale parcourue : {a['Distance totale']} km" )
