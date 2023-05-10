@@ -5,7 +5,7 @@ class Solution:
         pass
 
     def evaluate(self):
-        pass
+        return sys.float_info.max
 
     def validate(self):
         pass
