@@ -36,7 +36,8 @@ try:
 except Exception as e:
     print(e)
 a= solveurAMPL.solve(probleme)
-print(a)
+print(a[0])
+print(a[1])
 
         
 

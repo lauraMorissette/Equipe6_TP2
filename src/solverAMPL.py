@@ -74,19 +74,17 @@ class SolverAmpl(solver.Solver):
             ampl.getParameter('COUT_PAR_KM').set(prob.cm_neige)
             ampl.getParameter('NB_CM_NEIGE').set(prob.cout_KM)
 
-            
             ampl.solve()
 
             X = ampl.getVariable('X').getValues()
             total_distance = ampl.getObjective('Fct_obj').value()
 
             X = X.toList()
-            print(X)
-            print(total_distance)
-            # Afficher la matrice carrée formatée
+
+            # Afficher la matrice formatée
             X = tabulate(X, headers=['#Parking','#Parking', 'Chemin'])
             print(X)
-            return {'X': X, 'Distance totale' : total_distance}
+            return (X, total_distance)
 
         except Exception as e:
             print(e)
