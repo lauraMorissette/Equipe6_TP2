@@ -11,13 +11,14 @@ class SolverAmpl(solver.Solver):
 
     def solve(self, prob=None):
         try:
-            ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')
-            ampl_env = amplpy.Environment(ampl_path)
+            #ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')
+            #ampl_env = amplpy.Environment(ampl_path)
+            ampl_env = amplpy.Environment()
             ampl = amplpy.AMPL(ampl_env)
             ampl.setOption('solver', 'gurobi')
             ampl.setOption('gurobi_options', 'timelim 600 outlev 1')
 
-            model_dir = os.path.normpath('./src/Modele_AMPL')
+            model_dir = os.path.normpath('./Modele_AMPL')
             ampl.read(os.path.join(model_dir, 'TP2.mod'))
         except Exception as e:
             print('Problème de fichier')
