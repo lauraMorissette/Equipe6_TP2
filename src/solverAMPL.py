@@ -2,7 +2,9 @@ import solver
 import amplpy
 import problem_parking as prob_park
 import os
-
+from tabulate import tabulate
+import copy
+import numpy as np
 
 #Herite de la classe Solver, polymorphisme de la fonction solve
 class SolverAmpl(solver.Solver):
@@ -75,7 +77,17 @@ class SolverAmpl(solver.Solver):
 
             
             ampl.solve()
-            return ampl
+
+            X = ampl.getVariable('X').getValues()
+            total_distance = ampl.getObjective('Fct_obj').value()
+
+            X = X.toList()
+
+            # Afficher la matrice carrée formatée
+            X = tabulate(X, tablefmt='fancy_grid')
+            
+        
+            return {'X': X, 'Distance totale' : total_distance}
 
 
         except Exception as e:
