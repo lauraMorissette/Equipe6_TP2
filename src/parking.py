@@ -3,7 +3,7 @@ import problem_parking as prob_park
 import sys
 
 class Parking(solu.Solution):
-    def __init__(self):
+    def __init__(self, probleme_resolu=prob_park.ParkingProb()):
         super(Parking, self).__init__()
 
 
