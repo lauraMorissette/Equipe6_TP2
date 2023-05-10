@@ -20,7 +20,7 @@ class ParkingProb(problem.Problem):
             print(e)
             os._exit
 
-
+    #valide que les données d'entrées sont bonnes 
     def _validation_matrice_(self, m1, m2, m3):
         longueur1 = len(m1)
         longueur2 = len(m2)
