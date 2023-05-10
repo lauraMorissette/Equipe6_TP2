@@ -14,6 +14,7 @@ Paramètres optionnels:
   -c, --coutKM=<c>          Coût d'un camion en $/km. La valeur par défau
                             est de 2$/km
 """
+
 import getopt
 import sys
 import os
