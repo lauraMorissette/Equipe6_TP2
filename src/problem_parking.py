@@ -30,8 +30,6 @@ class ParkingProb(problem.Problem):
         else :
             raise Exception('Les matrices donnée en entrée ne sont pas compatible')
 
-
-
     #compte la longueur de la matrice parking
     def compter_nbr_parking(self):
         return len(self.matrice_distance)
