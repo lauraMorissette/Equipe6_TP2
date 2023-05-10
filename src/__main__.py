@@ -23,7 +23,6 @@ import os
 import solver as solv
 import problem_parking as prob_park
 import solverAMPL as solv_ampl
-
 class Usage(Exception):
    def __init__(self, msg):
       self.msg = msg
@@ -60,8 +59,8 @@ def main(argv=None):
                 params['distance_depot'] = eval(content)
 
             opts, args = getopt.getopt(argv[1:],
-                                    'hn:c:',
-                                    ['help',
+                                    'hfn:c:',
+                                    ['help','ffff'
                                         'neige=',
                                         'coutkm='])
 
@@ -75,7 +74,7 @@ def main(argv=None):
                     sys.exit(0)
 
                 elif o in ('-f', '--ffff'):
-                    print("Moi Aussi.")   
+                    print("Moi Aussi... Mais")   
                 
                 #TODO : Rajouter une partie pour matrice de distances
 
