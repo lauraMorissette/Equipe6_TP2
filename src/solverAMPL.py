@@ -13,14 +13,13 @@ class SolverAmpl(solver.Solver):
 
     def solve(self, prob=None):
         try:
-            #ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')
-            #ampl_env = amplpy.Environment(ampl_path)
-            ampl_env = amplpy.Environment()
+            ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')
+            ampl_env = amplpy.Environment(ampl_path)
             ampl = amplpy.AMPL(ampl_env)
             ampl.setOption('solver', 'gurobi')
             ampl.setOption('gurobi_options', 'timelim 600 outlev 1')
 
-            model_dir = os.path.normpath('./Modele_AMPL')
+            model_dir = os.path.normpath('./src/Modele_AMPL')
             ampl.read(os.path.join(model_dir, 'TP2.mod'))
         except Exception as e:
             print('Problème de fichier')
@@ -82,13 +81,12 @@ class SolverAmpl(solver.Solver):
             total_distance = ampl.getObjective('Fct_obj').value()
 
             X = X.toList()
-
+            print(X)
+            print(total_distance)
             # Afficher la matrice carrée formatée
-            X = tabulate(X, tablefmt='fancy_grid')
-            
-        
+            X = tabulate(X, headers=['#Parking','#Parking', 'Chemin'])
+            print(X)
             return {'X': X, 'Distance totale' : total_distance}
-
 
         except Exception as e:
             print(e)

@@ -31,8 +31,14 @@ class TestClass(unittest.TestCase):
 
     def test_instance_SolverMiniZinc(self):
         e = solv_mini.SolverMiniZinc()
+        b = solv.Solver()
         self.assertTrue(isinstance(e,solv_mini.SolverMiniZinc))
         self.assertTrue(isinstance(e,solv.Solver))
+        self.assertFalse(isinstance(b, solv.Solver))
+
+    def test_solver_solverAMPL(self):
+        a = prob.Problem()
+        
 
 if __name__ == '__main__':
     unittest.main()
