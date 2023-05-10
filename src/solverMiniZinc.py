@@ -6,4 +6,14 @@ class SolverMiniZinc(solver.Solver):
         super().__init__()
 
     def solve():
-        pass
+        try:
+            print('minizinc')
+        except Exception as e:
+            print('Problème de fichier')
+            print(e)
+
+        try:
+            print('minizinc')
+        except Exception as e:
+            print('Problème definition variable modèle')
+            print(e)
