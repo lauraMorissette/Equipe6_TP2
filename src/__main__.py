@@ -2,7 +2,7 @@
 Programme terrifiant
 Un exemple minimal d'application en ligne de commande.
 Par exemple, pour spécifier 15 cm de neige tombée : 
->>> python.exe -n 15
+#>>> python.exe -n 15
 
 Pour rouler l'application en mode interactif, lancez la sans paramètres:
 python __file__
@@ -44,17 +44,17 @@ def main(argv=None):
 
             params['coutKM'] = 2
 
-            with open("./data/dist1.txt", "r") as f:
+            with open("./src/data/dist1.txt", "r") as f:
                 # Lire le contenu du fichier en tant que chaîne de caractères
                 content = f.read()
                 # Convertir la chaîne de caractères en une liste de listes
                 params['distance'] = eval(content)
 
-            with open("./data/surf1.txt", "r") as f:
+            with open("./src/data/surf1.txt", "r") as f:
                 content = f.read()
                 params['surface'] = eval(content)
 
-            with open("./data/dist_dep1.txt", "r") as f:
+            with open("./src/data/dist_dep1.txt", "r") as f:
                 content = f.read()
                 params['distance_depot'] = eval(content)
 
