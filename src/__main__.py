@@ -66,6 +66,7 @@ def main(argv=None):
 
             # :TODO: Retirer la ligne suivante qui
             # permet de visualiser le contenu d'opts
+            print('opts : ')
             print(opts)
         
             for o, a in opts:

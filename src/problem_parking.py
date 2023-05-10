@@ -12,11 +12,14 @@ class ParkingProb(problem.Problem):
         self.cm_neige = cm_neige
         self.cout_KM = cout_KM
 
+    #compte la longueur de la matrice parking
     def compter_nbr_parking(self):
         return len(self.matrice_distance)
     
+    #compte la longueur de la matrice surface
     def compter_nbr_surface(self):
         return len(self.matrice_surface)
     
+    #compte la longueur de la matrice distance 
     def compter_nbr_distance_depot(self):
         return len(self.matrice_depot)

@@ -11,7 +11,10 @@ class SolverAmpl(solver.Solver):
     def __init__(self):
         super().__init__()
 
+    #Résout le problème avec le solveur AMPL
     def solve(self, prob=None):
+
+        #ouvrir le fichier AMPL .mod
         try:
             ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')
             ampl_env = amplpy.Environment(ampl_path)
@@ -25,10 +28,11 @@ class SolverAmpl(solver.Solver):
             print('Problème de fichier')
             print(e)
 
-
         ##longueur de la matrice de distance
         longueur = prob.compter_nbr_parking()
         print(prob.matrice_distance)
+
+        #Mettre les valeurs des paramètres 
         try:
 
             D = list(range(2,longueur+2))
@@ -74,6 +78,7 @@ class SolverAmpl(solver.Solver):
             ampl.getParameter('COUT_PAR_KM').set(prob.cm_neige)
             ampl.getParameter('NB_CM_NEIGE').set(prob.cout_KM)
 
+            #Résoudre
             ampl.solve()
 
             X = ampl.getVariable('X').getValues()
@@ -84,6 +89,8 @@ class SolverAmpl(solver.Solver):
             # Afficher la matrice formatée
             X = tabulate(X, headers=['#Parking','#Parking', 'Chemin'])
             print(X)
+
+            #retourne un tuple comportant la matrice des chemins utilisé et la distance totale parcouru par les déneigeurs
             return (X, total_distance)
 
         except Exception as e:
