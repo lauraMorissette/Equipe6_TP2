@@ -8,7 +8,6 @@ import solverMiniZinc as solv_mini
 import donnees as donne
 import copy 
 
-
 class TestClass(unittest.TestCase): 
 ### Test tout les instances des classes#####
 
@@ -34,7 +33,6 @@ class TestClass(unittest.TestCase):
         e = solv_mini.SolverMiniZinc()
         self.assertTrue(isinstance(e,solv_mini.SolverMiniZinc))
         self.assertTrue(isinstance(e,solv.Solver))
-
 
 if __name__ == '__main__':
     unittest.main()

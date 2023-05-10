@@ -11,7 +11,6 @@ class Distance():
            [2.7, 2.1, 1.7, 1.8, 1.3, 0.9, 0, 2.4],
            [0.4, 1.6, 1.2, 1.1, 2.4, 2.1, 2.4, 0]]
         
-
     def get_matrice():
         return Distance.distance_matrix
     
