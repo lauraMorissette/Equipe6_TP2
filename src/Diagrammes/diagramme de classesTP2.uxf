@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>328</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Problem
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>368</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Solution
+--
+evaluate()
+validate()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>320</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Solver
+--
+solve()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>256</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>SolverAMPL
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>428</y>
+      <w>84</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>ParkingProb
+--
+compter_nbr_parking()
+compter_nbr_surface()
+compter_nbr_distance_depot()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>424</y>
+      <w>84</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Parking
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>596</x>
+      <y>392</y>
+      <w>12</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>352</y>
+      <w>12</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>596</x>
+      <y>344</y>
+      <w>40</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-
+ retourne ▼</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>328</y>
+      <w>52</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+&lt; Résout</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>340</y>
+      <w>56</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1		
+&lt; s'applique à</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>596</x>
+      <y>280</y>
+      <w>12</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>676</x>
+      <y>320</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>SolverMiniZinc
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>332</y>
+      <w>44</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>492</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>matrice_distance
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>516</x>
+      <y>492</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>matrice_surface_parking
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>492</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>matrice_Depot
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>452</y>
+      <w>64</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+m2=1
+a &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0;130.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>456</y>
+      <w>20</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+a ▼</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>452</y>
+      <w>96</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+&lt;  a </panel_attributes>
+    <additional_attributes>220.0;20.0;10.0;20.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>312</x>
+      <y>224</y>
+      <w>464</w>
+      <h>348</h>
+    </coordinates>
+    <panel_attributes>DéneigementOpti
+--
+
+bg=white
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>256</x>
+      <y>104</y>
+      <w>636</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>DéneigementPlanner
+--
+
+bg=white
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>312</x>
+      <y>140</y>
+      <w>504</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>DéneigementSync
+--
+
+bg=white
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>308</x>
+      <y>0</y>
+      <w>508</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>DéneigementPortail
+--
+
+bg=white
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>204</y>
+      <w>64</w>
+      <h>244</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Génère</panel_attributes>
+    <additional_attributes>140.0;590.0;20.0;590.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>204</y>
+      <w>192</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+Obtient</panel_attributes>
+    <additional_attributes>10.0;610.0;420.0;610.0;410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>88</y>
+      <w>36</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+
+
+&lt;&lt;Access&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
