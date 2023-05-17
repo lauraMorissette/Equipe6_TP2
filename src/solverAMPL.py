@@ -16,8 +16,10 @@ class SolverAmpl(solver.Solver):
 
         #ouvrir le fichier AMPL .mod
         try:
-            ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')
-            ampl_env = amplpy.Environment(ampl_path)
+            # Les 2 lignes de codes e n vert sont pour les gens qui n'auraient pas voulu ajuster manuellement le path
+            #ampl_path = os.path.normpath('C:/ampl_mswin64/ampl_mswin64')
+            #ampl_env = amplpy.Environment(ampl_path)
+            ampl_env = amplpy.Environment()
             ampl = amplpy.AMPL(ampl_env)
             ampl.setOption('solver', 'gurobi')
             ampl.setOption('gurobi_options', 'timelim 600 outlev 1')
